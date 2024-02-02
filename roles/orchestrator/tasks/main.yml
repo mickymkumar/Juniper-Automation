@@ -1,0 +1,121 @@
+---
+- name: Create local directory for certificates
+      file:
+        path: "~/secrets/certs"
+        state: directory
+
+- name: Change to certificates directory
+      command: cd ~/secrets/certs
+
+- name: Generate or move certificates
+      command: "{{ item }}"
+      loop:
+        - "${MAGMA_ROOT}/orc8r/cloud/deploy/scripts/self_sign_certs.sh {{ gatewayip }}"
+        - "mv ~/secrets/certs/{{ gatewayip }}.crt controller.crt"
+        - "mv ~/secrets/certs/{{ gatewayip }}.key controller.key"
+        - "mv ~/secrets/certs/rootCA.pem rootCA.pem"
+        - "${MAGMA_ROOT}/orc8r/cloud/deploy/scripts/create_application_certs.sh {{ gatewayip }}"
+
+- name: Create admin_operator.pfx file
+      command: "openssl pkcs12 -export -inkey admin_operator.key.pem -in admin_operator.pem -out admin_operator.pfx"
+      args:
+        prompts:
+          - "Enter Export Password:"
+          - "Verifying - Enter Export Password:"
+
+- name: Display certificate directory contents
+      command: "ls -1 ~/secrets/certs/"
+
+- name: Initialize Terraform
+      command: "terraform init"
+      args:
+        chdir: "/orc8r/cloud/deploy/terraform/MODULE?ref=v1.8"
+
+- name: Terraform Apply for Infrastructure
+      command: "terraform apply -target=module.orc8r"
+      args:
+        chdir: "/orc8r/cloud/deploy/terraform/MODULE?ref=v1.8"
+
+- name: Terraform Apply for Secrets
+      command: "terraform apply -target=module.orc8r-app.null_resource.orc8r_seed_secrets"
+      args:
+        chdir: "/orc8r/cloud/deploy/terraform/MODULE?ref=v1.8"
+
+- name: Terraform Apply for Application
+      command: "terraform apply"
+      args:
+        chdir: "/orc8r/cloud/deploy/terraform/MODULE?ref=v1.8"
+
+- name: Create Orchestrator admin user
+      command: >
+        kubectl --namespace orc8r exec deploy/orc8r-orchestrator -- \
+        /var/opt/magma/bin/accessc \
+        add-existing -admin -cert /var/opt/magma/certs/admin_operator.pem \
+        admin_operator
+
+- name: Verify admin user creation
+      command: "kubectl --namespace orc8r exec deploy/orc8r-orchestrator -- /var/opt/magma/bin/accessc list-certs"
+
+- name: Remove local certificates
+      command: "rm -rf ~/secrets"
+
+- name: Display DNS resolution instructions
+      debug:
+        msg: |
+          After a few minutes, the NS records should propagate. Confirm successful deployment by visiting the host NMS organization at:
+          https://host.nms.yoursubdomain.yourdomain.com
+          Log in with the ADMIN_USER_EMAIL and ADMIN_USER_PASSWORD provided above.
+
+- name: Orchestrator able to access API
+  hosts: orchestrator
+  tasks:
+    - name: Ensure orchestrator can access API
+      uri:
+        url: "https://api.pmn-dev.wavelabs.in/swagger/v1/ui/"
+        method: GET
+      register: api_access_result
+      ignore_errors: yes
+
+    - name: Fail if orchestrator cannot access API
+      fail:
+        msg: "Orchestrator cannot access API!"
+      when: api_access_result.status != 200
+
+- name: Post new network JSON
+  hosts: orchestrator
+  tasks:
+    - name: Post new network JSON
+      uri:
+        url: "https://api.pmn-dev.wavelabs.in/swagger/v1/ui/orchestrator#/Networks/"
+        method: POST
+        body_format: json
+        body: "{{ lookup('file', 'config/json/new_network.json') }}"
+        headers:
+          Content-Type: "application/json"
+        client_cert: "config/admin_operator.key.pem"  
+        client_key: "config/admin_operator.pem"  
+        validate_certs: no  # Set to yes if your API server uses a valid certificate
+      register: post_network_result
+
+    - name: Fail if network post fails
+      fail:
+        msg: "Network post failed!"
+      when: post_network_result.status != 200
+
+- name: Verify network has been added
+  hosts: orchestrator
+  tasks:
+    - name: Get list of networks
+      uri:
+        url: "https://api.pmn-dev.wavelabs.in/swagger/v1/ui/orchestrator#/Networks/"
+        method: GET
+        client_cert: "config/admin_operator.key.pem"  
+        client_key: "config/admin_operator.pem"  
+        validate_certs: yes
+      register: get_networks_result
+
+    - name: Verify network has been added
+      assert:
+        that:
+          - "'NewNetwork' in get_networks_result.json()"
+        msg: "Network has not been added!"
