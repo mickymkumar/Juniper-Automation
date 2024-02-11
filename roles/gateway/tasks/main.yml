@@ -1,0 +1,60 @@
+- name: Pick up the latest code from the development branch
+  git:
+    repo: https://github.com/wavelabsai/pmn-systems.git
+    dest: "{{ gatewayip }}"
+    version: development
+    update: yes
+
+- name: Update package cache
+  apt:
+    update_cache: yes
+
+- name: Do pre-installation steps
+  hosts: gateway
+  become: yes
+  tasks:
+    - name: Copy rootCA.pem from orc8r
+      ansible.builtin.copy:
+        src: /path/to/your/orc8r/rootCA.pem
+        dest: /var/opt/magma/certs/rootCA.pem
+        mode: '0644'
+
+    - name: Download AGW docker install script
+      ansible.builtin.get_url:
+        url: https://github.com/wavelabs/pmn-system/raw/v1.8/lte/gateway/deploy/agw_install_docker.sh
+        dest: /tmp/agw_install_docker.sh
+        mode: '0755'
+
+    - name: Run AGW installation script
+      ansible.builtin.shell:
+        cmd: "sudo -i /tmp/agw_install_docker.sh"
+
+    - name: Create control_proxy.yml file
+      ansible.builtin.blockinfile:
+        path: /var/opt/magma/configs/control_proxy.yml
+        block: |
+          cloud_address: controller.orc8r.magmacore.link
+          cloud_port: 443
+          bootstrap_address: bootstrapper-controller.orc8r.magmacore.link
+          bootstrap_port: 443
+          fluentd_address: fluentd.orc8r.magmacore.link
+          fluentd_port: 24224
+
+          rootca_cert: /var/opt/magma/certs/rootCA.pem
+      become: yes
+
+    - name: Start AGW
+      ansible.builtin.command:
+        cmd: "cd /var/opt/magma/docker && sudo docker-compose up -d"
+
+    - name: Get Hardware ID and Challenge key
+      ansible.builtin.command:
+        cmd: "docker exec magmad show_gateway_info.py"
+      register: gateway_info_output
+
+    - name: Add AGW in orc8r
+      # Use the captured information from gateway_info_output to add AGW in orc8r (specific command not provided)
+
+    - name: Restart AGW
+      ansible.builtin.command:
+        cmd: "cd /var/opt/magma/docker && sudo docker-compose up -d --force-recreate"
