@@ -1,0 +1,20 @@
+---
+- name: Automation Script
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Bring up Orchestrator and Connect Gateway
+      # Replace 'orch8r_command' and 'gateway_command' with actual commands to bring up Orch8r and connect gateway
+      command: "{{ item }}"
+      with_items:
+        - orch8r_command
+        - gateway_command
+
+    - name: Create Network
+      # Replace 'network_creation_command' with the actual command to create a network
+      command: "{{ network_creation_command }}"
+
+    - name: Sync to Orchestrator
+      # Replace 'sync_command' with the actual command to sync to Orchestrator
+      command: "{{ sync_command }}"
