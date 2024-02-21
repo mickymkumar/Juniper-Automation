@@ -1,0 +1,10 @@
+
+Starting Activate Subscriber test...
+
+Subscriber to activate: IMSI001010000000002
+
+Response body:
+{"message":"service not found"}
+Activate Subscriber Test failed. The Response code is not 200 (OK) and it is: 404
+
+Activate Subscriber Test ended

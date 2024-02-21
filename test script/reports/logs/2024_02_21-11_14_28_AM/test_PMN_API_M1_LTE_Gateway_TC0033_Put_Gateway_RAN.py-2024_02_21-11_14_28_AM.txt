@@ -1,0 +1,12 @@
+
+Starting Put LTE Gateway RAN test
+
+Put LTE Gateway RAN Test passed. The response code is:
+204
+
+Verifying edited LTE Gateway RAN using GET command:
+
+LTE Gateway RAN gateway1 is edited as expected. 
+{"pci":260,"transmit_enabled":true}
+
+Put LTE Gateway RAN Test ended

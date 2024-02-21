@@ -1,0 +1,13 @@
+{
+  "test_TC01_valid_login": {
+    "email": "api-test-user@wavelabs.ai",
+    "password": "Test123456",
+    "expected_result_validation": "Dashboard"
+  },
+  "test_TC02_Invalid_login_credentials": {
+    "email": "guddy-acharya@wavelabs.ai",
+    "password": "Guddy123456",
+    "expected_result_validation": "Invalid email or password"
+  }
+
+}

@@ -1,0 +1,10 @@
+
+Starting Delete Subscribers test...
+
+Subscriber to delete: IMSI001010000000002
+
+Response body:
+{"message":"service not found"}
+Delete Subscribers Test failed. The Response code is not 200 (OK) and it is: 404
+
+Delete Subscribers Test ended

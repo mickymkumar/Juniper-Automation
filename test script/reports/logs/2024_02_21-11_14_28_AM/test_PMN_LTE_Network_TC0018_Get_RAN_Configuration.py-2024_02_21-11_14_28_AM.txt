@@ -1,0 +1,5 @@
+Starting  get Network RAN configuration test
+{"bandwidth_mhz":20,"tdd_config":{"earfcndl":44590,"special_subframe_pattern":7,"subframe_assignment":2}}
+Get network RAN configuration passed. The current status:
+200
+Get Network RAN configuration  ended

@@ -1,0 +1,10 @@
+
+Starting Get APN test...
+
+
+Response body:
+{"mtest03":{"apn_configuration":{"ambr":{"max_bandwidth_dl":20000000,"max_bandwidth_ul":10000000},"qos_profile":{"class_id":9,"preemption_capability":true,"preemption_vulnerability":false,"priority_level":15}},"apn_name":"mtest03"},"test03":{"apn_configuration":{"ambr":{"max_bandwidth_dl":1000000,"max_bandwidth_ul":1000000},"qos_profile":{"class_id":9,"preemption_capability":false,"preemption_vulnerability":false,"priority_level":15}},"apn_name":"test03"},"test04":{"apn_configuration":{"ambr":{"max_bandwidth_dl":1000000,"max_bandwidth_ul":1000000},"qos_profile":{"class_id":9,"preemption_capability":false,"preemption_vulnerability":false,"priority_level":15}},"apn_name":"test04"}}
+
+Get APN Test passed. The Response code is: 200
+
+Get APN Test ended

@@ -1,0 +1,9 @@
+requests
+PyYAML
+jsonschema
+urllib3
+datetime
+PyQt6
+HTMLTestRunner-Python3
+scapy
+scrapy

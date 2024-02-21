@@ -1,0 +1,12 @@
+
+Starting Delete QOS Profiles test
+
+Response body:
+
+Delete QOS Profiles Test passed. The Response code is: 204
+
+Verifying deleted QOS Profiles is not present:
+
+QOS Profiles is deleted as expected
+
+Delete QOS Profiles Test ended

@@ -1,0 +1,8 @@
+
+Starting Delete APN test
+
+Response body:
+{"message":"service not found"}
+
+Delete APN Test failed. The Response code is not 200 (OK) and it is: 404
+Delete APN Test ended

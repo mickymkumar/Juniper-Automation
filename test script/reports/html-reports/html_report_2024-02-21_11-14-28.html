@@ -1,0 +1,2394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Juniper Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Juniper Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2024-02-21 11:14:28</p>
+<p class='attribute'><strong>Duration:</strong> 0:05:05.852695</p>
+<p class='attribute'><strong>Status:</strong> Pass 42</p>
+
+<p class='description'>This report displays the actual file name, Functions, and status of the test cases.
+Number of files run: 42</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_APN_TC0001_Get_APN.Get_APN</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_apn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: 
+Starting Get APN test...
+
+
+
+Response body:
+{"mtest03":{"apn_configuration":{"ambr":{"max_bandwidth_dl":20000000,"max_bandwidth_ul":10000000},"qos_profile":{"class_id":9,"preemption_capability":true,"preemption_vulnerability":false,"priority_level":15}},"apn_name":"mtest03"},"test03":{"apn_configuration":{"ambr":{"max_bandwidth_dl":1000000,"max_bandwidth_ul":1000000},"qos_profile":{"class_id":9,"preemption_capability":false,"preemption_vulnerability":false,"priority_level":15}},"apn_name":"test03"},"test04":{"apn_configuration":{"ambr":{"max_bandwidth_dl":1000000,"max_bandwidth_ul":1000000},"qos_profile":{"class_id":9,"preemption_capability":false,"preemption_vulnerability":false,"priority_level":15}},"apn_name":"test04"}}
+
+
+Get APN Test passed. The Response code is: 
+200
+
+
+Get APN Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_27_AM\test_PMN_API_M1_LTE_APN_TC0001_Get_APN.py-2024_02_21-11_14_27_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_APN_TC0002_Post_APN.Post_APN</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_apn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: 
+Starting Post APN test:
+
+
+
+Post APN Test passed. The response code is:
+
+201
+
+
+Verifying added APN is present:
+
+
+APN test_apn is added as expected. 
+
+{"apn_configuration":{"ambr":{"max_bandwidth_dl":10000000,"max_bandwidth_ul":10000000},"qos_profile":{"class_id":9,"preemption_capability":false,"preemption_vulnerability":false,"priority_level":15}},"apn_name":"test_apn"}
+
+
+Post APN Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_27_AM\test_PMN_API_M1_LTE_APN_TC0002_Post_APN.py-2024_02_21-11_14_27_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_APN_TC0003_Get_Specific_APN.Get_Specific_APN</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_specific_apn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: 
+Starting Get APN test...APN to get: test_apn
+
+
+
+Response body:
+{"apn_configuration":{"ambr":{"max_bandwidth_dl":10000000,"max_bandwidth_ul":10000000},"qos_profile":{"class_id":9,"preemption_capability":false,"preemption_vulnerability":false,"priority_level":15}},"apn_name":"test_apn"}
+
+
+Get APN Test for test_apn passed. The Response code is: 
+200
+
+
+Get specific APN Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_27_AM\test_PMN_API_M1_LTE_APN_TC0003_Get_Specific_APN.py-2024_02_21-11_14_27_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_APN_TC0004_Put_APN.Put_APN</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_put_apn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: 
+Starting Put (Edit) APN test:
+
+
+
+Put (Edit) APN Test passed. The response code is:
+
+204
+
+
+Verifying edited APN using GET command:
+
+
+APN test_apn is edited as expected. 
+
+{"apn_configuration":{"ambr":{"max_bandwidth_dl":1000000,"max_bandwidth_ul":1000000},"qos_profile":{"class_id":9,"preemption_capability":false,"preemption_vulnerability":false,"priority_level":14}},"apn_name":"test_apn"}
+
+
+Put (Edit) APN Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_27_AM\test_PMN_API_M1_LTE_APN_TC0004_Put_APN.py-2024_02_21-11_14_27_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_APN_TC0005_Delete_APN.Delete_APN</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_delete_apn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: 
+Starting Delete APN test:
+
+
+Response body:
+
+
+Delete APN Test passed. The Response code is: 
+204
+
+
+Verifying deleted APN is not present:
+
+
+APN test_apn is deleted as expected
+
+
+Delete APN Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_APN_TC0005_Delete_APN.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Gateway_TC0023_Delete_Gateway.Delete_Gateway</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_delete_gateway</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: 
+Starting Delete LTE Gateway test...
+
+
+LTE gateway id to Delete:gateway1
+
+
+Response body:
+
+
+Delete LTE Gateway Test passed. The Response code is: 
+204
+
+
+Verifying deleted LTE gateway is not present:
+
+
+LTE gateway gateway1 is deleted as expected
+
+
+
+Delete LTE Gateway Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_Gateway_TC0023_Delete_Gateway.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Gateway_TC0024_Post_Gateway.Post_Gateway</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_gateway</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: 
+Starting Post LTE Gateway test:
+
+
+
+Post LTE Gateway Test passed. The response code is:
+
+201
+
+
+Verifying added LTE Gateway is present:
+
+
+LTE Gateway gateway1 is added as expected. 
+
+{"cellular":{"dns":{"dhcp_server_enabled":false,"enable_caching":false,"local_ttl":0},"epc":{"ip_block":"192.168.128.0/24","nat_enabled":true},"ngc":{},"ran":{"pci":260,"transmit_enabled":true}},"checked_in_recently":false,"connected_enodeb_serials":[],"description":"test","device":{"hardware_id":"4dfe212f-df33-4cd2-910c-41892a042fee","key":{"key":"MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAECMB9zEbAlLDQLq1K8tgCLO8Kie5IloU4QuAXEjtR19jt0KTkRzTYcBK1XwA+C6ALVKFWtlxQfrPpwOwLE7GFkZv1i7Lzc6dpqLnufSlvE/Xlq4n5K877tIuNac3U/8un","key_type":"SOFTWARE_ECDSA_SHA256"}},"id":"gateway1","magmad":{"autoupgrade_enabled":true,"autoupgrade_poll_interval":60,"checkin_interval":60,"checkin_timeout":30,"dynamic_services":["eventd","td-agent-bit"],"logging":{"aggregation":{"target_files_by_tag":{"mme":"var/log/mme.log"}},"log_level":"DEBUG"}},"name":"gateway1","tier":"default"}
+
+
+Post LTE Gateway Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_Gateway_TC0024_Post_Gateway.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Gateway_TC0025_Put_Gateway.Put_Gateway</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_put_gateway</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: 
+Starting Put LTE Gateway test:
+
+Editing Gateway description, dhcp server, ip_block
+
+
+Put LTE Gateway Test passed. The response code is:
+
+204
+
+
+Verifying edited LTE Gateway using GET command:
+
+
+LTE Gateway gateway1 is edited as expected. 
+
+{"cellular":{"dns":{"dhcp_server_enabled":true,"enable_caching":false,"local_ttl":0},"epc":{"ip_block":"192.168.129.0/24","nat_enabled":true},"ngc":{},"ran":{"pci":260,"transmit_enabled":true}},"checked_in_recently":false,"connected_enodeb_serials":[],"description":"test-edit","device":{"hardware_id":"4dfe212f-df33-4cd2-910c-41892a042fee","key":{"key":"MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAECMB9zEbAlLDQLq1K8tgCLO8Kie5IloU4QuAXEjtR19jt0KTkRzTYcBK1XwA+C6ALVKFWtlxQfrPpwOwLE7GFkZv1i7Lzc6dpqLnufSlvE/Xlq4n5K877tIuNac3U/8un","key_type":"SOFTWARE_ECDSA_SHA256"}},"id":"gateway1","magmad":{"autoupgrade_enabled":true,"autoupgrade_poll_interval":60,"checkin_interval":60,"checkin_timeout":30,"dynamic_services":["eventd","td-agent-bit"],"logging":{"aggregation":{"target_files_by_tag":{"mme":"var/log/mme.log"}},"log_level":"DEBUG"}},"name":"gateway1","tier":"default"}
+
+
+Put LTE Gateway Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_Gateway_TC0025_Put_Gateway.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Gateway_TC0026_Get_Gateway.Get_Gateway</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_gateway</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: 
+Starting Get LTE Gateway test...
+
+
+
+Response body:
+{"gateway1":{"cellular":{"dns":{"dhcp_server_enabled":true,"enable_caching":false,"local_ttl":0},"epc":{"ip_block":"192.168.129.0/24","nat_enabled":true},"ngc":{},"ran":{"pci":260,"transmit_enabled":true}},"checked_in_recently":false,"connected_enodeb_serials":[],"description":"test-edit","device":{"hardware_id":"4dfe212f-df33-4cd2-910c-41892a042fee","key":{"key":"MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAECMB9zEbAlLDQLq1K8tgCLO8Kie5IloU4QuAXEjtR19jt0KTkRzTYcBK1XwA+C6ALVKFWtlxQfrPpwOwLE7GFkZv1i7Lzc6dpqLnufSlvE/Xlq4n5K877tIuNac3U/8un","key_type":"SOFTWARE_ECDSA_SHA256"}},"id":"gateway1","magmad":{"autoupgrade_enabled":true,"autoupgrade_poll_interval":60,"checkin_interval":60,"checkin_timeout":30,"dynamic_services":["eventd","td-agent-bit"],"logging":{"aggregation":{"target_files_by_tag":{"mme":"var/log/mme.log"}},"log_level":"DEBUG"}},"name":"gateway1","tier":"default"}}
+
+
+Get LTE Gateway Test passed. The Response code is: 
+200
+
+
+Get LTE Gateway Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_Gateway_TC0026_Get_Gateway.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Gateway_TC0027_Get_Specific_Gateway.Get_Specific_Gateway</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_specific_get_gateway</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.1: 
+Starting Get Specific LTE Gateway test...
+
+
+LTE gateway id to get:gateway1
+
+
+Response body:
+{"cellular":{"dns":{"dhcp_server_enabled":true,"enable_caching":false,"local_ttl":0},"epc":{"ip_block":"192.168.129.0/24","nat_enabled":true},"ngc":{},"ran":{"pci":260,"transmit_enabled":true}},"checked_in_recently":false,"connected_enodeb_serials":[],"description":"test-edit","device":{"hardware_id":"4dfe212f-df33-4cd2-910c-41892a042fee","key":{"key":"MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAECMB9zEbAlLDQLq1K8tgCLO8Kie5IloU4QuAXEjtR19jt0KTkRzTYcBK1XwA+C6ALVKFWtlxQfrPpwOwLE7GFkZv1i7Lzc6dpqLnufSlvE/Xlq4n5K877tIuNac3U/8un","key_type":"SOFTWARE_ECDSA_SHA256"}},"id":"gateway1","magmad":{"autoupgrade_enabled":true,"autoupgrade_poll_interval":60,"checkin_interval":60,"checkin_timeout":30,"dynamic_services":["eventd","td-agent-bit"],"logging":{"aggregation":{"target_files_by_tag":{"mme":"var/log/mme.log"}},"log_level":"DEBUG"}},"name":"gateway1","tier":"default"}
+
+
+Get Specific LTE Gateway Test passed. The Response code is: 
+200
+
+
+Get Specific LTE Gateway Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_Gateway_TC0027_Get_Specific_Gateway.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Gateway_TC0028_Get_Gateway_Cellular.Get_Gateway_Cellular</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_gateway_cellular</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.1: 
+Starting Get LTE Gateway Cellular test...
+
+
+LTE gateway id to get Cellular data: gateway1
+
+
+Response body:
+{"dns":{"dhcp_server_enabled":true,"enable_caching":false,"local_ttl":0},"epc":{"ip_block":"192.168.129.0/24","nat_enabled":true},"ngc":{},"ran":{"pci":260,"transmit_enabled":true}}
+
+
+Get LTE Gateway Cellular Test passed. The Response code is: 
+200
+
+
+Get LTE Gateway Cellular Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_Gateway_TC0028_Get_Gateway_Cellular.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Gateway_TC0029_Put_Gateway_Cellular.Put_Gateway_Cellular</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
+</tr>
+
+<tr id='pt12.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_put_gateway_cellular</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.1')" >
+        pass</a>
+
+    <div id='div_pt12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt12.1: 
+Starting Put LTE Gateway Cellular test:
+
+Editing LTE Gateway cellular data
+
+
+Put LTE Gateway Cellular Test passed. The response code is:
+
+204
+
+
+Verifying edited LTE Gateway Cellular using GET command:
+
+
+LTE Gateway Cellular gateway1 is edited as expected. 
+
+{"dns":{"dhcp_server_enabled":true,"enable_caching":false,"local_ttl":0,"records":[{"a_record":["192.88.99.142"],"aaaa_record":["2001:0db8:85a3:0000:0000:8a2e:0370:7334"],"cname_record":["cname.example.com"],"domain":"example.com"}]},"epc":{"congestion_control_enabled":true,"dns_primary":"8.8.8.8","dns_secondary":"8.8.4.4","ip_block":"192.168.128.0/24","ipv4_p_cscf_addr":"172.27.23.150","ipv4_sgw_s1u_addr":"string","ipv6_block":"fdee:5:6c::/48","ipv6_dns_addr":"2001:4860:4860:0:0:0:0:8888","ipv6_p_cscf_addr":"2a12:577:9941:f99c:0002:0001:c731:f114","ipv6_prefix_allocation_mode":"RANDOM","nat_enabled":true,"node_identifier":"192.168.200.1","sgi_management_iface_gw":"string","sgi_management_iface_ipv6_addr":"2001:4860:4860:0:0:0:0:8888/64","sgi_management_iface_ipv6_gw":"2001:4860:4860:0:0:0:0:1","sgi_management_iface_static_ip":"string","sgi_management_iface_vlan":"stri","subscriberdb_sync_interval":300},"he_config":{"enable_encryption":true,"enable_header_enrichment":true,"encryption_key":"C14r0315v0x","he_encoding_type":"BASE64","he_encryption_algorithm":"RC4","he_hash_function":"MD5","hmac_key":"Xs21Ncas87"},"ngc":{"amf_default_sd":"ffffff","amf_default_sst":1,"amf_name":"amf.example.org","amf_pointer":"0","amf_region_id":"1","amf_set_id":"1"},"non_eps_service":{"arfcn_2g":[0],"csfb_mcc":"001","csfb_mnc":"01","csfb_rat":0,"lac":1,"non_eps_service_control":0},"pooling":[{"gateway_pool_id":"pool1","mme_code":1,"mme_relative_capacity":10}],"ran":{"pci":260,"transmit_enabled":true}}
+
+
+Put LTE Gateway Cellular Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_Gateway_TC0029_Put_Gateway_Cellular.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Gateway_TC0030_Get_Gateway_DNS_Config.Get_Gateway_DNS_Config</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',1)">Detail</a></td>
+</tr>
+
+<tr id='pt13.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_gateway_DNS_Config</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt13.1')" >
+        pass</a>
+
+    <div id='div_pt13.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt13.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt13.1: 
+Starting Get LTE Gateway DNS config test...
+
+
+LTE gateway id to get DNS config data: gateway1
+
+
+Response body:
+{"dhcp_server_enabled":true,"enable_caching":false,"local_ttl":0,"records":[{"a_record":["192.88.99.142"],"aaaa_record":["2001:0db8:85a3:0000:0000:8a2e:0370:7334"],"cname_record":["cname.example.com"],"domain":"example.com"}]}
+
+
+Get LTE Gateway DNS config Test passed. The Response code is: 
+200
+
+
+Get LTE Gateway DNS config Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_Gateway_TC0030_Get_Gateway_DNS_Config.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Gateway_TC0031_Put_Gateway_DNS_config.Put_Gateway_DNS_Config</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='pt14.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_put_gateway_DNS_config</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt14.1')" >
+        pass</a>
+
+    <div id='div_pt14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt14.1: 
+Starting Put LTE Gateway DNS config test:
+
+Editing LTE Gateway DNS config data
+
+
+Put LTE Gateway DNS config Test passed. The response code is:
+
+204
+
+
+Verifying edited LTE Gateway DNS config using GET command:
+
+
+LTE Gateway DNS config gateway1 is edited as expected. 
+
+{"dhcp_server_enabled":true,"enable_caching":true,"local_ttl":0,"records":[{"a_record":["192.88.99.142"],"aaaa_record":["2001:0db8:85a3:0000:0000:8a2e:0370:7334"],"cname_record":["cname.example1.com"],"domain":"example1.com"}]}
+
+
+Put LTE Gateway DNS config Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_Gateway_TC0031_Put_Gateway_DNS_config.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Gateway_TC0032_Get_Gateway_RAN.Get_Gateway_RAN</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
+</tr>
+
+<tr id='pt15.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_gateway_Ran</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt15.1')" >
+        pass</a>
+
+    <div id='div_pt15.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt15.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt15.1: 
+Starting Get LTE Gateway RAN test...
+
+
+LTE gateway id to get RAN: gateway1
+
+
+Response body:
+{"pci":260,"transmit_enabled":true}
+
+
+Get LTE Gateway RAN Test passed. The Response code is: 
+200
+
+
+Get LTE Gateway RAN Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_Gateway_TC0032_Get_Gateway_RAN.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Gateway_TC0033_Put_Gateway_RAN.Put_Gateway_RAN</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c16',1)">Detail</a></td>
+</tr>
+
+<tr id='pt16.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_put_gateway_Ran</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt16.1')" >
+        pass</a>
+
+    <div id='div_pt16.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt16.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt16.1: 
+Starting Put LTE Gateway RAN test:
+
+Editing LTE Gateway RAN data: gateway1
+
+
+Put LTE Gateway RAN Test passed. The response code is:
+
+204
+
+
+Verifying edited LTE Gateway RAN using GET command:
+
+
+LTE Gateway RAN gateway1 is edited as expected. 
+
+{"pci":260,"transmit_enabled":true}
+
+
+Put LTE Gateway RAN Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_Gateway_TC0033_Put_Gateway_RAN.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Gateway_TC0034_Get_Gateway_EPC.Get_Gateway_EPC</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c17',1)">Detail</a></td>
+</tr>
+
+<tr id='pt17.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_gateway_epc</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt17.1')" >
+        pass</a>
+
+    <div id='div_pt17.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt17.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt17.1: 
+Starting Get LTE Gateway EPC test...
+
+
+LTE gateway id to get EPC: gateway1
+
+
+Response body:
+{"congestion_control_enabled":true,"dns_primary":"8.8.8.8","dns_secondary":"8.8.4.4","ip_block":"192.168.128.0/24","ipv4_p_cscf_addr":"172.27.23.150","ipv4_sgw_s1u_addr":"string","ipv6_block":"fdee:5:6c::/48","ipv6_dns_addr":"2001:4860:4860:0:0:0:0:8888","ipv6_p_cscf_addr":"2a12:577:9941:f99c:0002:0001:c731:f114","ipv6_prefix_allocation_mode":"RANDOM","nat_enabled":true,"node_identifier":"192.168.200.1","sgi_management_iface_gw":"string","sgi_management_iface_ipv6_addr":"2001:4860:4860:0:0:0:0:8888/64","sgi_management_iface_ipv6_gw":"2001:4860:4860:0:0:0:0:1","sgi_management_iface_static_ip":"string","sgi_management_iface_vlan":"stri","subscriberdb_sync_interval":300}
+
+
+Get LTE Gateway EPC Test passed. The Response code is: 
+200
+
+
+Get LTE Gateway EPC Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_Gateway_TC0034_Get_Gateway_EPC.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Gateway_TC0035_Put_Gateway_EPC.Put_Gateway_EPC</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c18',1)">Detail</a></td>
+</tr>
+
+<tr id='pt18.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_put_gateway_epc</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt18.1')" >
+        pass</a>
+
+    <div id='div_pt18.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt18.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt18.1: 
+Starting Put LTE Gateway EPC test:
+
+Editing LTE Gateway EPC data: gateway1
+
+
+Put LTE Gateway EPC Test passed. The response code is:
+
+204
+
+
+Verifying edited LTE Gateway EPC using GET command:
+
+
+LTE Gateway EPC gateway1 is edited as expected. 
+
+{"congestion_control_enabled":false,"dns_primary":"8.8.8.8","dns_secondary":"8.8.4.4","ip_block":"192.168.128.0/24","ipv4_p_cscf_addr":"172.27.23.150","ipv4_sgw_s1u_addr":"string","ipv6_block":"fdee:5:6c::/48","ipv6_dns_addr":"2001:4860:4860:0:0:0:0:8888","ipv6_p_cscf_addr":"2a12:577:9941:f99c:0002:0001:c731:f114","ipv6_prefix_allocation_mode":"RANDOM","nat_enabled":false,"node_identifier":"192.168.200.1","sgi_management_iface_gw":"string","sgi_management_iface_ipv6_addr":"2001:4860:4860:0:0:0:0:8888/64","sgi_management_iface_ipv6_gw":"2001:4860:4860:0:0:0:0:1","sgi_management_iface_static_ip":"string","sgi_management_iface_vlan":"stri","subscriberdb_sync_interval":300}
+
+
+Put LTE Gateway EPC Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M1_LTE_Gateway_TC0035_Put_Gateway_EPC.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Network_TC0006_Get_Network.get_network</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c19',1)">Detail</a></td>
+</tr>
+
+<tr id='pt19.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_network</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt19.1')" >
+        pass</a>
+
+    <div id='div_pt19.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt19.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt19.1: Starting  get network test:
+
+["sf-shipping-dock","subha111","sunnyvale-warehouse-net","test1","test2","test3","test4","test5","testog","wl_1","wl_bevo"]
+
+Get network passed. The current status:
+
+200
+
+Get Network ended
+
+Test ended.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Network_TC0008_Get_Describe_Network.network</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c20',1)">Detail</a></td>
+</tr>
+
+<tr id='pt20.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_description_network</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt20.1')" >
+        pass</a>
+
+    <div id='div_pt20.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt20.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt20.1: Starting  get network Description test:
+
+Starting get test:
+{"cellular":{"epc":{"default_rule_id":"default_rule_1","gx_gy_relay_enabled":false,"hss_relay_enabled":false,"lte_auth_amf":"gAA=","lte_auth_op":"EREREREREREREREREREREQ==","mcc":"001","mnc":"01","mobility":{"ip_allocation_mode":"NAT","reserved_addresses":null},"network_services":["policy_enforcement"],"tac":1},"ran":{"bandwidth_mhz":20,"tdd_config":{"earfcndl":44590,"special_subframe_pattern":7,"subframe_assignment":2}}},"description":"message2","dns":{"enable_caching":false,"local_ttl":0},"features":{"features":{"placeholder":"true"}},"id":"test1","name":"test1","subscriber_config":{"network_wide_rule_names":["test_policy","policy_01","policy_02"]}}
+
+Test passed. The current status: &lt;Response [200]&gt;
+&lt;bound method Logger.debug of &lt;Logger urllib3 (DEBUG)&gt;&gt;
+Test ended.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Network_TC0010_Get_Cellular_configuration.network_Get_Cellular_configuration</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c21',1)">Detail</a></td>
+</tr>
+
+<tr id='pt21.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_cellular_configuration_network</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt21.1')" >
+        pass</a>
+
+    <div id='div_pt21.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt21.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt21.1: Starting  get network test:
+
+{"epc":{"default_rule_id":"default_rule_1","gx_gy_relay_enabled":false,"hss_relay_enabled":false,"lte_auth_amf":"gAA=","lte_auth_op":"EREREREREREREREREREREQ==","mcc":"001","mnc":"01","mobility":{"ip_allocation_mode":"NAT","reserved_addresses":null},"network_services":["policy_enforcement"],"tac":1},"ran":{"bandwidth_mhz":20,"tdd_config":{"earfcndl":44590,"special_subframe_pattern":7,"subframe_assignment":2}}}
+
+Get network passed. The current status:
+
+200
+
+Get Network ended
+
+Test ended.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Network_TC0012_Get_EPC_Configuration.network_Get_EPC_configuration</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c22',1)">Detail</a></td>
+</tr>
+
+<tr id='pt22.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_epc_configuration_network</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt22.1')" >
+        pass</a>
+
+    <div id='div_pt22.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt22.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt22.1: Starting  get Network EPC configuration test:
+
+{"default_rule_id":"default_rule_1","gx_gy_relay_enabled":false,"hss_relay_enabled":false,"lte_auth_amf":"gAA=","lte_auth_op":"EREREREREREREREREREREQ==","mcc":"001","mnc":"01","mobility":{"ip_allocation_mode":"NAT","reserved_addresses":null},"network_services":["policy_enforcement"],"tac":1}
+
+Get network passed. The current status:
+
+200
+
+Get Network EPC  ended
+
+Test ended.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Network_TC0013_PUT_EPC_Configuration.put_network_epc_configuration</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c23',1)">Detail</a></td>
+</tr>
+
+<tr id='pt23.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_put_apn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt23.1')" >
+        pass</a>
+
+    <div id='div_pt23.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt23.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt23.1: 
+Starting Put Network EPC Configuration test:
+
+{"message":"Not Found"}
+
+Put Network EPC Configuration Test failed. The response code  is:
+
+404
+
+Put Network EPC Configuration  Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\test_PMN_API_M1_LTE_Network_TC0013_PUT_EPC_Configuration.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Network_TC0016_Get_NGC_Configuration.network_Get_NGC_configuration</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c24',1)">Detail</a></td>
+</tr>
+
+<tr id='pt24.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_epc_configuration_network</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt24.1')" >
+        pass</a>
+
+    <div id='div_pt24.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt24.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt24.1: Starting  get Network NGC configuration test:
+
+null
+
+Get network NGC configuration passed. The current status:
+
+200
+
+Get Network NGC configuration  ended
+
+Test ended.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Network_TC0017_Put_NGC_configuration.put_network_NGC_configuration</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c25',1)">Detail</a></td>
+</tr>
+
+<tr id='pt25.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_put_NGC_configuration</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt25.1')" >
+        pass</a>
+
+    <div id='div_pt25.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt25.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt25.1: 
+Starting Put Network NGC Configuration  test:
+
+{"message":"Not Found"}
+
+Put Network NGC Configuration Test failed. The response code  is:
+
+404
+
+Put Network NGC Configuration Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\test_PMN_API_M1_LTE_Network_TC0017_Put_NGC_configuration.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Network_TC0020_Get_Describe_Specific_Network.network</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c26',1)">Detail</a></td>
+</tr>
+
+<tr id='pt26.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_description_network</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt26.1')" >
+        pass</a>
+
+    <div id='div_pt26.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt26.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt26.1: Starting  get network Description test:
+
+Starting get test:
+"message2"
+
+Test passed. The current status: &lt;Response [200]&gt;
+&lt;bound method Logger.debug of &lt;Logger urllib3 (DEBUG)&gt;&gt;
+Test ended.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M1_LTE_Network_TC0022_Get_DNS_Network.Get_DNS_Network</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c27',1)">Detail</a></td>
+</tr>
+
+<tr id='pt27.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_dns_network</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt27.1')" >
+        pass</a>
+
+    <div id='div_pt27.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt27.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt27.1: Starting  get network dns test:
+
+Starting get test:
+{"enable_caching":false,"local_ttl":0}
+
+Test passed. The current status: &lt;Response [200]&gt;
+&lt;bound method Logger.debug of &lt;Logger urllib3 (DEBUG)&gt;&gt;
+Test ended.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M2_PolicyDB_TC01_Get_QOS_profiles.Get_QOS_profiles</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c28',1)">Detail</a></td>
+</tr>
+
+<tr id='pt28.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_apn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt28.1')" >
+        pass</a>
+
+    <div id='div_pt28.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt28.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt28.1: Starting Get QOS Profiles test...
+
+Response body:{"Subhadarshini":{"class_id":1,"id":"Subhadarshini","max_req_bw_dl":10,"max_req_bw_ul":8},"test":{"class_id":0,"id":"test","max_req_bw_dl":9,"max_req_bw_ul":9}}
+
+Get APN Test passed. The Response code is: 
+200
+Get QOS Profiles Test ended
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M2_PolicyDB_TC01_Get_QOS_profiles.py-2024_02_21-11_14_28_AM.txt
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M2_PolicyDB_TC03_Get_specific_QOS_profiles.Get_QOS_profiles</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c29',1)">Detail</a></td>
+</tr>
+
+<tr id='pt29.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_specific_qos</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt29.1')" >
+        pass</a>
+
+    <div id='div_pt29.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt29.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt29.1: Starting Get QOS Profiles test...
+
+Response body:{"message":"Not found"}
+
+Get QOS Profiles Test failed. The Response code is not 200 (OK) and it is: 
+404
+Get QOS Profiles Test ended
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M2_PolicyDB_TC03_Get_specific_QOS_profiles.py-2024_02_21-11_14_28_AM.txt
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M2_PolicyDB_TC06_Get_Base_Name.Get_base_name</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c30',1)">Detail</a></td>
+</tr>
+
+<tr id='pt30.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_apn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt30.1')" >
+        pass</a>
+
+    <div id='div_pt30.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt30.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt30.1: Starting Get Base Name test...
+
+Response body:{"message":"Not Found"}
+
+Get Base Name Test failed. The Response code is not 200 (OK) and it is: 
+404
+Get Base Name Test ended
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M2_PolicyDB_TC06_Get_Base_Name.py-2024_02_21-11_14_28_AM.txt
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M2_PolicyDB_TC08_Get_specific_base_name.Get_specific_base_name</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c31',1)">Detail</a></td>
+</tr>
+
+<tr id='pt31.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_specific_qos</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt31.1')" >
+        pass</a>
+
+    <div id='div_pt31.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt31.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt31.1: Starting Get specific base name test...
+
+Response body:{"message":"Not found"}
+
+Get specific base name Test failed. The Response code is not 200 (OK) and it is: 
+404
+Get specific base name Test ended
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M2_PolicyDB_TC08_Get_specific_base_name.py-2024_02_21-11_14_28_AM.txt
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M2_PolicyDB_TC10_Get_all_Base_Name.Get_all_base_name</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c32',1)">Detail</a></td>
+</tr>
+
+<tr id='pt32.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_all_base_name</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt32.1')" >
+        pass</a>
+
+    <div id='div_pt32.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt32.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt32.1: Starting Get All Base Name test...
+
+Response body:{"test_base":{"name":"test_base","rule_names":["test_policy"]}}
+
+Get All Base Name  passed. The Response code is: 
+200
+Get All Base Name  Test ended
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M2_PolicyDB_TC10_Get_all_Base_Name.py-2024_02_21-11_14_28_AM.txt
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M2_PolicyDB_tc02_Post_QOS_profiles.post_qos_profiles</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c33',1)">Detail</a></td>
+</tr>
+
+<tr id='pt33.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_qos_profiles</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt33.1')" >
+        pass</a>
+
+    <div id='div_pt33.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt33.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt33.1: 
+Starting Post QOS Profiles test:
+
+
+
+Post QOS Profiles passed. The response code is:
+
+201
+
+
+Verifying added QOS Profiles is present:
+
+
+QOS Profiles is added as expected. 
+
+
+Post QOS Profiles Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M2_PolicyDB_tc02_Post_QOS_profiles.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M2_policyDB_TC05_Delete_qos_profiles.Delete_qos_profile</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c34',1)">Detail</a></td>
+</tr>
+
+<tr id='pt34.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_delete_qos</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt34.1')" >
+        pass</a>
+
+    <div id='div_pt34.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt34.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt34.1: 
+Starting Delete QOS Profiles test:
+
+
+Response body:
+
+
+Delete QOS Profiles Test passed. The Response code is: 
+204
+
+
+Verifying deleted QOS Profiles is not present:
+
+
+QOS Profiles is deleted as expected
+
+
+Delete QOS Profiles Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M2_policyDB_TC05_Delete_qos_profiles.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M3_SubscriberDB_tc01_post_subscriber.Post_Subscriber</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c35',1)">Detail</a></td>
+</tr>
+
+<tr id='pt35.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_post_subscriber</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt35.1')" >
+        pass</a>
+
+    <div id='div_pt35.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt35.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt35.1: 
+Starting Post APN test:
+
+
+
+Post Subscriber Test passed. The response code is:
+
+201
+
+
+Verifying added Subscriber is present:
+
+
+Subscriber IMSI001010000000002 is added as expected. 
+
+
+Post subscriber Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M3_SubscriberDB_tc01_post_subscriber.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M3_SubscriberDB_tc02_get_subscribers.Get_Subscribers</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c36',1)">Detail</a></td>
+</tr>
+
+<tr id='pt36.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_subscribers</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt36.1')" >
+        pass</a>
+
+    <div id='div_pt36.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt36.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt36.1: 
+Starting Get Subscribers test...
+
+
+
+Response body:
+{"next_page_token":"","subscribers":{"IMSI001010000000002":{"active_apns":["test03"],"active_policies":["test_policy"],"config":{"forbidden_network_types":["EPC"],"lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"Rltc6LGZtJ+qXwou4jimvA==","state":"ACTIVE","sub_profile":"default"}},"forbidden_network_types":["EPC"],"id":"IMSI001010000000002","lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"Rltc6LGZtJ+qXwou4jimvA==","state":"ACTIVE","sub_profile":"default"},"name":"IMSI001010000000002"},"IMSI001010000000003":{"active_apns":["test04"],"active_policies":["policy_01"],"ambr":{"max_bandwidth_dl":5,"max_bandwidth_ul":5},"config":{"ambr":{"max_bandwidth_dl":5,"max_bandwidth_ul":5},"forbidden_network_types":["EPC"],"lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"6O0oneupUuQoO1TojmGDyg==","state":"ACTIVE","sub_profile":"default"}},"forbidden_network_types":["EPC"],"id":"IMSI001010000000003","lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"6O0oneupUuQoO1TojmGDyg==","state":"ACTIVE","sub_profile":"default"},"name":"IMSI001010000000003"}},"total_count":2}
+
+
+Get Subscribers Test passed. The Response code is: 
+200
+
+
+Get Subscribers Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M3_SubscriberDB_tc02_get_subscribers.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M3_SubscriberDB_tc03_put_subscriber.Put_Subscribers</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c37',1)">Detail</a></td>
+</tr>
+
+<tr id='pt37.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_put_subscribers</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt37.1')" >
+        pass</a>
+
+    <div id='div_pt37.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt37.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt37.1: 
+Starting Put Subscriber test...
+
+
+Subscriber Id to Edit: IMSI001010000000002
+
+Changing Active policy in the subscriber
+
+
+Response body:
+
+
+Put Subscriber Test passed. The Response code is: 
+204
+
+
+Verifying modified Subscriber :
+
+
+Response body:
+{"active_apns":["test03"],"active_policies":["test_policy"],"config":{"forbidden_network_types":["EPC"],"lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"Rltc6LGZtJ+qXwou4jimvA==","state":"ACTIVE","sub_profile":"default"}},"forbidden_network_types":["EPC"],"id":"IMSI001010000000002","lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"Rltc6LGZtJ+qXwou4jimvA==","state":"ACTIVE","sub_profile":"default"},"name":"IMSI001010000000002"}
+
+
+Subscriber id IMSI001010000000002 is modified as expected. 
+
+
+
+Put Subscriber Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M3_SubscriberDB_tc03_put_subscriber.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M3_SubscriberDB_tc04_get_specific_subscriber.Get_Subscribers</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c38',1)">Detail</a></td>
+</tr>
+
+<tr id='pt38.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_subscribers</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt38.1')" >
+        pass</a>
+
+    <div id='div_pt38.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt38.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt38.1: 
+Starting Get Subscriber test...
+
+
+Subscriber to get: IMSI001010000000002
+
+
+Response body:
+{"active_apns":["test03"],"active_policies":["test_policy"],"config":{"forbidden_network_types":["EPC"],"lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"Rltc6LGZtJ+qXwou4jimvA==","state":"ACTIVE","sub_profile":"default"}},"forbidden_network_types":["EPC"],"id":"IMSI001010000000002","lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"Rltc6LGZtJ+qXwou4jimvA==","state":"ACTIVE","sub_profile":"default"},"name":"IMSI001010000000002"}
+
+
+Get Subscriber Test passed. The Response code is: 
+200
+
+
+Get Subscriber Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M3_SubscriberDB_tc04_get_specific_subscriber.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M3_SubscriberDB_tc05_activate_subscriber.Activate_Subscribers</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c39',1)">Detail</a></td>
+</tr>
+
+<tr id='pt39.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_activate_subscribers</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt39.1')" >
+        pass</a>
+
+    <div id='div_pt39.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt39.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt39.1: 
+Starting Activate Subscriber test...
+
+
+Subscriber to activate: IMSI001010000000002
+
+
+Response body:
+
+
+Activate Subscriber Test passed. The Response code is: 
+200
+
+
+Activate Subscriber Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M3_SubscriberDB_tc05_activate_subscriber.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M3_SubscriberDB_tc06_deactivate_subscriber.Deactivate_Subscribers</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c40',1)">Detail</a></td>
+</tr>
+
+<tr id='pt40.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_deactivate_subscribers</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt40.1')" >
+        pass</a>
+
+    <div id='div_pt40.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt40.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt40.1: 
+Starting Deactivate Subscriber test...
+
+
+Subscriber to deactivate: IMSI001010000000002
+
+
+Response body:
+
+
+Deactivate Subscriber Test passed. The Response code is: 
+200
+
+
+Deactivate Subscriber Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M3_SubscriberDB_tc06_deactivate_subscriber.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_API_M3_SubscriberDB_tc07_delete_subscribers.Delete_Subscribers</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c41',1)">Detail</a></td>
+</tr>
+
+<tr id='pt41.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_delete_subscribers</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt41.1')" >
+        pass</a>
+
+    <div id='div_pt41.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt41.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt41.1: 
+Starting Delete Subscribers test...
+
+
+Subscriber to delete: IMSI001010000000002
+
+
+Response body:
+
+
+Delete Subscribers Test passed. The Response code is: 
+204
+
+
+Verifying deleted subscriber is not present:
+
+
+Subscriber IMSI001010000000002 is deleted as expected
+
+
+
+Delete Subscribers Test ended
+
+
+Report stored at:
+C:\Users\Micky\OneDrive\Documents\projects\other-development\api-tester\reports\logs\2024_02_21-11_14_28_AM\test_PMN_API_M3_SubscriberDB_tc07_delete_subscribers.py-2024_02_21-11_14_28_AM.txt
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PMN_LTE_Network_TC0018_Get_RAN_Configuration.network_Get_RAN_configuration</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c42',1)">Detail</a></td>
+</tr>
+
+<tr id='pt42.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_RAN_configuration_network</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt42.1')" >
+        pass</a>
+
+    <div id='div_pt42.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt42.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt42.1: Starting  get Network RAN configuration test:
+
+{"bandwidth_mhz":20,"tdd_config":{"earfcndl":44590,"special_subframe_pattern":7,"subframe_assignment":2}}
+
+Get network RAN configuration passed. The current status:
+
+200
+
+Get Network RAN configuration  ended
+
+Test ended.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>42</td>
+    <td>42</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

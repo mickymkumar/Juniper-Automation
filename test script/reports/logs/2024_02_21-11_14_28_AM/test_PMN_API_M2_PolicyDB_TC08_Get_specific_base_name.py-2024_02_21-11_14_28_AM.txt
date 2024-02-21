@@ -1,0 +1,9 @@
+
+Starting Get specific base name test...
+
+
+Response body:
+{"message":"Not found"}
+Get specific base name Test failed. The Response code is not 200 (OK) and it is: 404
+
+Get specific base name Test ended

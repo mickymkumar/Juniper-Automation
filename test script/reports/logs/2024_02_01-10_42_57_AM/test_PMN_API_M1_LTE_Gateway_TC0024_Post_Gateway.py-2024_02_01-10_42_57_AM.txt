@@ -1,0 +1,6 @@
+
+Starting Post LTE Gateway test
+{"message":"service not found"}
+Post LTE Gateway Test failed. The response code is:
+404
+Post LTE Gateway Test ended

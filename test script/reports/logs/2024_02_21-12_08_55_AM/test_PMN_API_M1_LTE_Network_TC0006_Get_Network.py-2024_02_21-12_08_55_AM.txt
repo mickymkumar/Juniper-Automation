@@ -1,0 +1,5 @@
+Starting  get network  test
+["sf-shipping-dock","subha111","sunnyvale-warehouse-net","test1","test2","test3","test4","test5","testog","wl_1","wl_bevo"]
+Get network passed. The current status:
+200
+Get Network ended

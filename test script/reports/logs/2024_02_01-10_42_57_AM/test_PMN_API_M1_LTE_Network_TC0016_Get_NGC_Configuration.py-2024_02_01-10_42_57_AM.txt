@@ -1,0 +1,4 @@
+Starting  get Network NGC configuration test
+{"message":"service not found"}
+
+Get Network NGC configuration  ended

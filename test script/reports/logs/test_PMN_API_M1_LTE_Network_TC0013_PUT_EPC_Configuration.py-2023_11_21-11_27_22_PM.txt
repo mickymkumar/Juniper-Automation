@@ -1,0 +1,6 @@
+
+Starting Put Network EPC Configuration  test
+{"message":"Not Found"}
+Put Network EPC Configuration Test failed. The response code is:
+404
+Put Network EPC Configuration  Test ended

@@ -1,0 +1,4 @@
+Starting  get Network RAN configuration test
+{"message":"service not found"}
+
+Get Network RAN configuration  ended

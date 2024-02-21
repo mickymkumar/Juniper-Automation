@@ -1,0 +1,6 @@
+
+Starting Put NGC Configuration  Gateway test
+{"message":"Not Found"}
+Put Network NGC Configuration Test failed. The response code is:
+404
+Put Network NGC Configuration Test ended

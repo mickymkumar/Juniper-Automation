@@ -1,0 +1,11 @@
+
+Starting Put Subscriber test...
+
+Subscriber Id to Edit: IMSI001010000000002
+Changing Active policy in the subscriber
+
+Response body:
+{"message":"service not found"}
+Put Subscriber Test failed. The Response code is not 200 (OK) and it is: 404
+
+Put Subscriber Test ended

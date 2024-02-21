@@ -1,0 +1,11 @@
+
+Starting Get LTE Gateway DNS config test...
+
+LTE gateway id to get DNS config data: gateway1
+
+Response body:
+{"dhcp_server_enabled":true,"enable_caching":false,"local_ttl":0,"records":[{"a_record":["192.88.99.142"],"aaaa_record":["2001:0db8:85a3:0000:0000:8a2e:0370:7334"],"cname_record":["cname.example.com"],"domain":"example.com"}]}
+
+Get LTE Gateway DNS config Test passed. The Response code is: 200
+
+Get LTE Gateway DNS config Test ended

@@ -1,0 +1,6 @@
+
+Starting Put LTE Gateway EPC test
+{"message":"service not found"}
+Put LTE Gateway EPC Test failed. The response code is:
+404
+Put LTE Gateway EPC Test ended

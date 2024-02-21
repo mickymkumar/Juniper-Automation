@@ -1,0 +1,11 @@
+
+Starting Post QOS Profiles test
+
+Post QOS Profiles Test passed. The response code is:
+201
+
+Verifying added QOS Profiles is present:
+
+QOS Profiles is added as expected. 
+
+Post QOS Profiles Test ended

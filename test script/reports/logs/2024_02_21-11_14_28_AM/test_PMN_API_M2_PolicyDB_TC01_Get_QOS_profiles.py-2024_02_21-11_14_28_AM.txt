@@ -1,0 +1,10 @@
+
+Starting Get QOS Profiles  test...
+
+
+Response body:
+{"Subhadarshini":{"class_id":1,"id":"Subhadarshini","max_req_bw_dl":10,"max_req_bw_ul":8},"test":{"class_id":0,"id":"test","max_req_bw_dl":9,"max_req_bw_ul":9}}
+
+Get QOS Profiles  Test passed. The Response code is: 200
+
+Get QOS Profiles Test ended

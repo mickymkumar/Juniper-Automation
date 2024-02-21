@@ -1,0 +1,6 @@
+
+Starting Put LTE Gateway DNS config test
+{"message":"service not found"}
+Put LTE Gateway DNS config Test failed. The response code is:
+404
+Put LTE Gateway DNS config Test ended

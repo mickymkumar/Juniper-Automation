@@ -1,0 +1,10 @@
+
+Starting Get APN test...APN to get: test_apn
+
+
+Response body:
+{"apn_configuration":{"ambr":{"max_bandwidth_dl":10000000,"max_bandwidth_ul":10000000},"qos_profile":{"class_id":9,"preemption_capability":false,"preemption_vulnerability":false,"priority_level":15}},"apn_name":"test_apn"}
+
+Get APN Test for test_apn passed. The Response code is: 200
+
+Get specific APN Test ended

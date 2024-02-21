@@ -1,0 +1,10 @@
+
+Starting Get LTE Gateway Cellular test...
+
+LTE gateway id to get Cellular data: gateway1
+
+Response body:
+{"message":"service not found"}
+Get LTE Gateway Cellular Test failed. The Response code is not 200 (OK) and it is: 404
+
+Get LTE Gateway Cellular Test ended

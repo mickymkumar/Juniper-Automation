@@ -1,0 +1,6 @@
+
+Starting Put LTE Gateway Cellular test
+{"message":"service not found"}
+Put LTE Gateway Cellular Test failed. The response code is:
+404
+Put LTE Gateway Cellular Test ended

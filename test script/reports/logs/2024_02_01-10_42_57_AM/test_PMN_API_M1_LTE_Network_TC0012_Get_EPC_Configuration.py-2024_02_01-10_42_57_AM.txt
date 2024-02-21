@@ -1,0 +1,4 @@
+Starting  get Network EPC configuration test
+{"message":"service not found"}
+
+Get Network EPC  ended

@@ -1,0 +1,9 @@
+
+Starting Get QOS Profiles  test...
+
+
+Response body:
+{"message":"service not found"}
+Get QOS Profiles Test failed. The Response code is not 200 (OK) and it is: 404
+
+Get QOS Profiles Test ended

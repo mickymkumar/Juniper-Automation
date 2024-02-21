@@ -1,0 +1,15 @@
+
+Starting Delete Subscribers test...
+
+Subscriber to delete: IMSI001010000000002
+
+Response body:
+
+Delete Subscribers Test passed. The Response code is: 204
+
+Verifying deleted subscriber is not present:
+
+Subscriber IMSI001010000000002 is deleted as expected
+
+
+Delete Subscribers Test ended

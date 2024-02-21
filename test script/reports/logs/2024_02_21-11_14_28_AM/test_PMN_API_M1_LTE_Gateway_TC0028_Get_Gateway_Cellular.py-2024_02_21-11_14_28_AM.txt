@@ -1,0 +1,11 @@
+
+Starting Get LTE Gateway Cellular test...
+
+LTE gateway id to get Cellular data: gateway1
+
+Response body:
+{"dns":{"dhcp_server_enabled":true,"enable_caching":false,"local_ttl":0},"epc":{"ip_block":"192.168.129.0/24","nat_enabled":true},"ngc":{},"ran":{"pci":260,"transmit_enabled":true}}
+
+Get LTE Gateway Cellular Test passed. The Response code is: 200
+
+Get LTE Gateway Cellular Test ended

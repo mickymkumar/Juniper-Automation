@@ -1,0 +1,23 @@
+{
+    "email": "email",
+    "password": "password",
+    "login_btn": "//button[@type='button']",
+    "validateValidLogin": "//span[text()='Dashboard']",
+    "ClickNetworkSelector": "//button[@data-testid='networkSelector']",
+    "ClickCreateNetwork": "//span[text()='Create Network']",
+    "Enter_NetworkID": "//input[@placeholder='Enter ID']",
+    "Enter_NetworkName": "//input[@placeholder='Enter Name']",
+    "Enter_Description": "//textarea[@placeholder='Enter Description']",
+    "Add_Network": "//button[@data-testid='saveButton']",
+    "Save_EPC": "//button[@data-testid='epcSaveButton']",
+    "Save_RAN": "//button[@data-testid='ranSaveButton']",
+    "Manage_Network": "/html/body/div[2]/div[3]/ul/a[1]/span[1]",
+    "ClickEdit_Network": "",
+    "Enter_EditNetworkName": "",
+    "Editing_Description": "",
+    "Editing_NetworkType": "",
+    "Editing_Save": ""
+
+
+
+}

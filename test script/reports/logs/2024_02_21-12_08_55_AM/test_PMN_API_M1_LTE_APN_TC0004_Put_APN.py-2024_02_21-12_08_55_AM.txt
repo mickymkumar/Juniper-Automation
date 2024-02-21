@@ -1,0 +1,12 @@
+
+Starting Put (Edit) APN test
+
+Put (Edit) APN Test passed. The response code is:
+204
+
+Verifying edited APN using GET command:
+
+APN test_apn is edited as expected. 
+{"apn_configuration":{"ambr":{"max_bandwidth_dl":1000000,"max_bandwidth_ul":1000000},"qos_profile":{"class_id":9,"preemption_capability":false,"preemption_vulnerability":false,"priority_level":14}},"apn_name":"test_apn"}
+
+Put (Edit) APN Test ended

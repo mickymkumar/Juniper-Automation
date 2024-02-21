@@ -1,0 +1,12 @@
+
+Starting Put LTE Gateway EPC test
+
+Put LTE Gateway EPC Test passed. The response code is:
+204
+
+Verifying edited LTE Gateway EPC using GET command:
+
+LTE Gateway EPC gateway1 is edited as expected. 
+{"congestion_control_enabled":false,"dns_primary":"8.8.8.8","dns_secondary":"8.8.4.4","ip_block":"192.168.128.0/24","ipv4_p_cscf_addr":"172.27.23.150","ipv4_sgw_s1u_addr":"string","ipv6_block":"fdee:5:6c::/48","ipv6_dns_addr":"2001:4860:4860:0:0:0:0:8888","ipv6_p_cscf_addr":"2a12:577:9941:f99c:0002:0001:c731:f114","ipv6_prefix_allocation_mode":"RANDOM","nat_enabled":false,"node_identifier":"192.168.200.1","sgi_management_iface_gw":"string","sgi_management_iface_ipv6_addr":"2001:4860:4860:0:0:0:0:8888/64","sgi_management_iface_ipv6_gw":"2001:4860:4860:0:0:0:0:1","sgi_management_iface_static_ip":"string","sgi_management_iface_vlan":"stri","subscriberdb_sync_interval":300}
+
+Put LTE Gateway EPC Test ended

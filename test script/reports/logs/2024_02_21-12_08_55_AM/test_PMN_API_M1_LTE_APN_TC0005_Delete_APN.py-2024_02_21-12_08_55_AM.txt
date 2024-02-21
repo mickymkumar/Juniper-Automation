@@ -1,0 +1,12 @@
+
+Starting Delete APN test
+
+Response body:
+
+Delete APN Test passed. The Response code is: 204
+
+Verifying deleted APN is not present:
+
+APN test_apn is deleted as expected
+
+Delete APN Test ended

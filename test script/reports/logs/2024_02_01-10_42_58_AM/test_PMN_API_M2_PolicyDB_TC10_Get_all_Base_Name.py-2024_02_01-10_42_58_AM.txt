@@ -1,0 +1,9 @@
+
+Starting Get All Base Name test...
+
+
+Response body:
+{"message":"service not found"}
+Get All Base Name  Test failed. The Response code is not 200 (OK) and it is: 404
+
+Get All Base Name Test ended

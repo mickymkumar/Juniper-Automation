@@ -1,0 +1,19 @@
+
+Starting Put Subscriber test...
+
+Subscriber Id to Edit: IMSI001010000000002
+Changing Active policy in the subscriber
+
+Response body:
+
+Put Subscriber Test passed. The Response code is: 204
+
+Verifying modified Subscriber :
+
+Response body:
+{"active_apns":["test03"],"active_policies":["test_policy"],"config":{"forbidden_network_types":["EPC"],"lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"Rltc6LGZtJ+qXwou4jimvA==","state":"ACTIVE","sub_profile":"default"}},"forbidden_network_types":["EPC"],"id":"IMSI001010000000002","lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"Rltc6LGZtJ+qXwou4jimvA==","state":"ACTIVE","sub_profile":"default"},"name":"IMSI001010000000002"}
+
+Subscriber id IMSI001010000000002 is modified as expected. 
+
+
+Put Subscriber Test ended

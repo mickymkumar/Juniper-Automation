@@ -1,0 +1,11 @@
+
+Starting Get LTE Gateway RAN test...
+
+LTE gateway id to get RAN: gateway1
+
+Response body:
+{"pci":260,"transmit_enabled":true}
+
+Get LTE Gateway RAN Test passed. The Response code is: 200
+
+Get LTE Gateway RAN Test ended

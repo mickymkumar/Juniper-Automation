@@ -1,0 +1,12 @@
+
+Starting Put LTE Gateway DNS config test
+
+Put LTE Gateway DNS config Test passed. The response code is:
+204
+
+Verifying edited LTE Gateway DNS config using GET command:
+
+LTE Gateway DNS config gateway1 is edited as expected. 
+{"dhcp_server_enabled":true,"enable_caching":true,"local_ttl":0,"records":[{"a_record":["192.88.99.142"],"aaaa_record":["2001:0db8:85a3:0000:0000:8a2e:0370:7334"],"cname_record":["cname.example1.com"],"domain":"example1.com"}]}
+
+Put LTE Gateway DNS config Test ended

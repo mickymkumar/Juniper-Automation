@@ -1,0 +1,49 @@
+{
+  "cellular": {
+    "dns": {
+      "dhcp_server_enabled": false,
+      "enable_caching": false,
+      "local_ttl": 0
+    },
+    "epc": {
+      "ip_block": "192.168.128.0/24",
+      "nat_enabled": true
+    },
+    "ngc": {},
+    "ran": {
+      "pci": 260,
+      "transmit_enabled": true
+    }
+  },
+  "checked_in_recently": false,
+  "connected_enodeb_serials": [],
+  "description": "test",
+  "device": {
+    "hardware_id": "4dfe212f-df33-4cd2-910c-41892a042fee",
+    "key": {
+      "key": "MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAECMB9zEbAlLDQLq1K8tgCLO8Kie5IloU4QuAXEjtR19jt0KTkRzTYcBK1XwA+C6ALVKFWtlxQfrPpwOwLE7GFkZv1i7Lzc6dpqLnufSlvE/Xlq4n5K877tIuNac3U/8un",
+      "key_type": "SOFTWARE_ECDSA_SHA256"
+    }
+  },
+  "id": "gateway1",
+  "magmad": {
+    "autoupgrade_enabled": true,
+    "autoupgrade_poll_interval": 60,
+    "checkin_interval": 60,
+    "checkin_timeout": 30,
+    "dynamic_services": [
+      "eventd",
+      "td-agent-bit"
+    ],
+    "logging": {
+      "aggregation": {
+        "target_files_by_tag": {
+          "mme": "var/log/mme.log"
+        }
+      },
+      "log_level": "DEBUG"
+    }
+  },
+  "name": "gateway1",
+  "tier": "default"
+}

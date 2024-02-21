@@ -1,0 +1,6 @@
+
+Starting Put LTE Gateway RAN test
+{"message":"service not found"}
+Put LTE Gateway RAN Test failed. The response code is:
+404
+Put LTE Gateway RAN Test ended

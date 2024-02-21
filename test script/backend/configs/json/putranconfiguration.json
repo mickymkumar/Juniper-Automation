@@ -1,0 +1,8 @@
+{
+  "bandwidth_mhz": 20,
+  "tdd_config": {
+    "earfcndl": 44590,
+    "special_subframe_pattern": 7,
+    "subframe_assignment": 2
+  }
+}

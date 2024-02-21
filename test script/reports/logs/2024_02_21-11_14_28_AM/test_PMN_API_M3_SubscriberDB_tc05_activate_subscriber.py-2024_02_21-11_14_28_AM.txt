@@ -1,0 +1,10 @@
+
+Starting Activate Subscriber test...
+
+Subscriber to activate: IMSI001010000000002
+
+Response body:
+
+Activate Subscriber Test passed. The Response code is: 200
+
+Activate Subscriber Test ended

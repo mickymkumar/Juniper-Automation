@@ -1,0 +1,4 @@
+Starting  get network  test
+{"message":"service not found"}
+
+Get Network ended

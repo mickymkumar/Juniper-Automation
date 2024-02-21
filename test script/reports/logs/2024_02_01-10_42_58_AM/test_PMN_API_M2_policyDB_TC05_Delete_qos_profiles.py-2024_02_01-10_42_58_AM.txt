@@ -1,0 +1,7 @@
+
+Starting Delete QOS Profiles test
+
+Response body:
+{"message":"service not found"}
+
+Delete QOS Profiles Test ended

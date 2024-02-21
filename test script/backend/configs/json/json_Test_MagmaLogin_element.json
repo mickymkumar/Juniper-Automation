@@ -1,0 +1,7 @@
+{
+    "email": "email",
+    "password": "password",
+    "login_btn": "//button[@type='button']",
+    "validateValidLogin": "//span[text()='Dashboard']",
+    "validateInvalidLogin": "//label[@class='MuiFormLabel-root MuiFormLabel-colorPrimary Mui-error css-1qug7xi']"
+}

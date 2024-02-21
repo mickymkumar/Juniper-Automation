@@ -1,0 +1,10 @@
+
+Starting Deactivate Subscriber test...
+
+Subscriber to deactivate: IMSI001010000000002
+
+Response body:
+{"message":"service not found"}
+Deactivate Subscriber Test failed. The Response code is not 200 (OK) and it is: 404
+
+Deactivate Subscriber Test ended

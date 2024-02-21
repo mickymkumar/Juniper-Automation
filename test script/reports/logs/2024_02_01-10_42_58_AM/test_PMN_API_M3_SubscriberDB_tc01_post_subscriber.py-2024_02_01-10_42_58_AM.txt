@@ -1,0 +1,6 @@
+
+Starting Post APN test
+{"message":"service not found"}
+Post Subscriber Test failed. The response code is:
+404
+Post subscriber Test ended

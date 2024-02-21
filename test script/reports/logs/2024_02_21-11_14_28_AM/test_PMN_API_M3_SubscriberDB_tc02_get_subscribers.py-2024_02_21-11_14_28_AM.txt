@@ -1,0 +1,10 @@
+
+Starting Get Subscribers test...
+
+
+Response body:
+{"next_page_token":"","subscribers":{"IMSI001010000000002":{"active_apns":["test03"],"active_policies":["test_policy"],"config":{"forbidden_network_types":["EPC"],"lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"Rltc6LGZtJ+qXwou4jimvA==","state":"ACTIVE","sub_profile":"default"}},"forbidden_network_types":["EPC"],"id":"IMSI001010000000002","lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"Rltc6LGZtJ+qXwou4jimvA==","state":"ACTIVE","sub_profile":"default"},"name":"IMSI001010000000002"},"IMSI001010000000003":{"active_apns":["test04"],"active_policies":["policy_01"],"ambr":{"max_bandwidth_dl":5,"max_bandwidth_ul":5},"config":{"ambr":{"max_bandwidth_dl":5,"max_bandwidth_ul":5},"forbidden_network_types":["EPC"],"lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"6O0oneupUuQoO1TojmGDyg==","state":"ACTIVE","sub_profile":"default"}},"forbidden_network_types":["EPC"],"id":"IMSI001010000000003","lte":{"auth_algo":"MILENAGE","auth_key":"Rltc6LGZtJ+qXwou4jimvA==","auth_opc":"6O0oneupUuQoO1TojmGDyg==","state":"ACTIVE","sub_profile":"default"},"name":"IMSI001010000000003"}},"total_count":2}
+
+Get Subscribers Test passed. The Response code is: 200
+
+Get Subscribers Test ended

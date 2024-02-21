@@ -1,0 +1,5 @@
+Starting  get Network NGC configuration test
+null
+Get network NGC configuration passed. The current status:
+200
+Get Network NGC configuration  ended

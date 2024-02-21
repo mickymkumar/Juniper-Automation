@@ -1,0 +1,10 @@
+
+Starting Get All Base Name test...
+
+
+Response body:
+{"test_base":{"name":"test_base","rule_names":["test_policy"]}}
+
+Get All Base Name  Test passed. The Response code is: 200
+
+Get All Base Name Test ended

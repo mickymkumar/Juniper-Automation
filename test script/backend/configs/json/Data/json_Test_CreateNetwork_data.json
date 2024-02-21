@@ -1,0 +1,18 @@
+{
+  "test_TC01Create_Valid_Network": {
+    "email": "api-test-user@wavelabs.ai",
+    "password": "Test123456",
+    "expected_result_validation": "Dashboard",
+    "Enter_NetworkID": "subha111",
+    "Enter_NetworkName": "Wavelabs Network",
+    "Add_Description": "Add Test1"
+
+  },
+  "test_TC0EditNetwork": {
+    "Enter_EditNetworkName": "Wavelabs Network2",
+    "Enter_Description": "Add Test1",
+    "Edit_NetworkName": "subha222",
+    "Editing_Description": "Add Test2",
+
+  }
+}

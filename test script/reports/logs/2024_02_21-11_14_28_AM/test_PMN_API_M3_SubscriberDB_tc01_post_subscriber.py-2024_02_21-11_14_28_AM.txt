@@ -1,0 +1,11 @@
+
+Starting Post APN test
+
+Post Subscriber Test passed. The response code is:
+201
+
+Verifying added Subscriber is present:
+
+Subscriber IMSI001010000000002 is added as expected. 
+
+Post subscriber Test ended

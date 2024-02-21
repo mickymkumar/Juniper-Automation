@@ -1,0 +1,15 @@
+
+Starting Delete LTE Gateway test...
+
+LTE gateway id to Delete:gateway1
+
+Response body:
+
+Delete LTE Gateway Test passed. The Response code is: 204
+
+Verifying deleted LTE gateway is not present:
+
+LTE gateway gateway1 is deleted as expected
+
+
+Delete LTE Gateway Test ended
