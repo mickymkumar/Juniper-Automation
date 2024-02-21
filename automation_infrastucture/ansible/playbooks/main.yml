@@ -1,3 +1,10 @@
+"""
+Title: Standalone for Juniper Automation
+Date:  2024-02-05
+Author: Micky Kumar
+
+
+"""
 ---
 - name: Juniper Automation Playbook
   hosts: all

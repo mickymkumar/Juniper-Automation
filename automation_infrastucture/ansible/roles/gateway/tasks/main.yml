@@ -1,3 +1,11 @@
+"""
+Title: Standalone for Juniper Automation
+Date:  2024-02-05
+Author: Micky Kumar
+
+
+"""
+
 - name: Pick up the latest code from the development branch
   git:
     repo: https://github.com/wavelabsai/pmn-systems.git
@@ -51,9 +59,6 @@
       ansible.builtin.command:
         cmd: "docker exec magmad show_gateway_info.py"
       register: gateway_info_output
-
-    - name: Add AGW in orc8r
-      # Use the captured information from gateway_info_output to add AGW in orc8r (specific command not provided)
 
     - name: Restart AGW
       ansible.builtin.command:
