@@ -1,0 +1,9 @@
+other:
+  image:
+  helm:
+PMN:
+  aws_access_key_id:
+  aws_secret_access_key:
+  region: us-west-2
+  role_arn:
+  source_profile: default
